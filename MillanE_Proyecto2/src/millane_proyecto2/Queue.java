@@ -81,7 +81,7 @@ public class Queue {
         } else {
             for (int i = front; i <= rear; i++) {
                 if (items[i] != null) {
-                    items[i].printCarId();
+                    items[i].printPersonajeId();
                 } else {
                     System.out.println("hay null");
                 }
