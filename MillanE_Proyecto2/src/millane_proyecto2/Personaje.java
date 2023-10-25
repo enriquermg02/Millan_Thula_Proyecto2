@@ -41,7 +41,7 @@ public class Personaje {
         return result;
     }
     
-    public void printCarId() {
+    public void printPersonajeId() {
         System.out.println(this.getId());
     }
 
