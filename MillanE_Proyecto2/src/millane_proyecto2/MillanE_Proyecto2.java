@@ -4,6 +4,8 @@
  */
 package millane_proyecto2;
 
+import java.util.Random;
+
 /**
  *
  * @author enriq
@@ -15,6 +17,16 @@ public class MillanE_Proyecto2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Random rand = new Random();
+        
+        int abilities = rand.nextInt(11);
+        System.out.println(abilities);
+        
+        
+        Personaje enrique= new Personaje(3,"Naruto");
+        
+        System.out.println(enrique.isAbilitiesQuality());
+        System.out.println(enrique.isHpQuality());
     }
     
 }

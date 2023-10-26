@@ -4,6 +4,8 @@
  */
 package millane_proyecto2;
 
+import java.util.Random;
+
 /**
  *
  * @author leste
@@ -33,8 +35,12 @@ public class Personaje {
         this.forceQuality = false;
         this.agilityQuality = false;
         this.individualQualityCounter = 0;
-        
+        designation();
     }
+    
+    
+    
+    
     
     public String getId() {
         String result = this.idLetter + (String.valueOf(this.idNumber));
@@ -198,4 +204,34 @@ public class Personaje {
     public void setRandomNumber(int randomNumber) {
         this.randomNumber = randomNumber;
     }
+    
+    
+    
+    
+    public void designation(){
+        Random rand = new Random();
+        
+        int abilities = rand.nextInt(11);
+        int hp = rand.nextInt(11);
+        int force = rand.nextInt(11);
+        int agility = rand.nextInt(11);
+        
+        
+        if (abilities>=6){
+            this.abilitiesQuality=true;
+        }
+        if (hp>=7){
+            this.hpQuality=true;
+        }
+        if (force>=5){
+            this.forceQuality=true;
+        }
+        if (agility>=4){
+            this.agilityQuality=true;
+        }
+        
+      
+    }
+    
+    
 }
