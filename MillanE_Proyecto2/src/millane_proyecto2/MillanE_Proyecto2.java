@@ -5,6 +5,7 @@
 package millane_proyecto2;
 
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 
 /**
  *
@@ -20,13 +21,16 @@ public class MillanE_Proyecto2 {
         Random rand = new Random();
         
         int abilities = rand.nextInt(11);
-        System.out.println(abilities);
+     
         
         
         Personaje enrique= new Personaje(3,"Naruto");
         
-        System.out.println(enrique.isAbilitiesQuality());
-        System.out.println(enrique.isHpQuality());
+//        Semaphore mutex= new Semaphore(1);
+//        Administrador admin= new Administrador(mutex);
+//        AI ERMG= new AI(mutex);
+//        admin.start();
+//        ERMG.start();
     }
     
 }

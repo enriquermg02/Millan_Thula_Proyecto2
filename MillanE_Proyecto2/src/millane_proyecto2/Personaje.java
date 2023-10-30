@@ -24,6 +24,7 @@ public class Personaje {
     private int individualQualityCounter;
     
     private int randomNumber;
+    private int designator;
     
     public Personaje(int counterPersonajes, String nameGames) {
         this.idNumber = counterPersonajes;
@@ -35,6 +36,7 @@ public class Personaje {
         this.forceQuality = false;
         this.agilityQuality = false;
         this.individualQualityCounter = 0;
+       
         designation();
     }
     
@@ -219,19 +221,27 @@ public class Personaje {
         
         if (abilities>=6){
             this.abilitiesQuality=true;
+            priority++;
         }
         if (hp>=7){
             this.hpQuality=true;
+            priority++;
         }
         if (force>=5){
             this.forceQuality=true;
+            priority++;
         }
         if (agility>=4){
             this.agilityQuality=true;
+            priority++;
         }
         
       
     }
+    
+    
+    
+    
     
     
 }
