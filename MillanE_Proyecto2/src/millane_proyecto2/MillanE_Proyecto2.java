@@ -25,12 +25,16 @@ public class MillanE_Proyecto2 {
         
         
         Personaje enrique= new Personaje(3,"Naruto");
+        Personaje mateo = new Personaje(4,"holi");
         
-//        Semaphore mutex= new Semaphore(1);
-//        Administrador admin= new Administrador(mutex);
-//        AI ERMG= new AI(mutex);
+        
+        Semaphore mutex1= new Semaphore(1);
+        Semaphore mutex2= new Semaphore(1);
+//        Administrador admin= new Administrador(mutex1);
+        AI ERMG= new AI(mutex1, mutex2, 0);
+        ERMG.playRockPaperScissors(enrique, mateo);
 //        admin.start();
-//        ERMG.start();
+        ERMG.start();
     }
     
 }

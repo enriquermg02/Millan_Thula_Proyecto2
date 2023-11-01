@@ -8,25 +8,21 @@ package millane_proyecto2;
  *
  * @author enriq
  */
-public class Nintendo {
-    
-    
-    
-    private Queue cola1;
+public class Empresa {
+     private Queue cola1;
     private Queue cola2;
     private Queue cola3;
     private Queue cola4;
     private Queue Refuerzo;
     private Queue Ganadores;
-    private Queue BDD;
 
-    public Nintendo() {
-        this.cola1 = new Queue(10);
-        this.cola2 = new Queue(10);
-        this.cola3 = new Queue(10);
-        this.cola4 = new Queue(10);
-        this.Refuerzo = new Queue(10);
-        this.Ganadores = new Queue(10);
+    public Empresa(Queue cola1, Queue cola2, Queue cola3, Queue cola4, Queue Refuerzo, Queue Ganadores) {
+        this.cola1 = cola1;
+        this.cola2 = cola2;
+        this.cola3 = cola3;
+        this.cola4 = cola4;
+        this.Refuerzo = Refuerzo;
+        this.Ganadores = Ganadores;
     }
 
     public Queue getCola1() {
@@ -76,11 +72,6 @@ public class Nintendo {
     public void setGanadores(Queue Ganadores) {
         this.Ganadores = Ganadores;
     }
-    
-    
-    
-    
-    
     
     
 }

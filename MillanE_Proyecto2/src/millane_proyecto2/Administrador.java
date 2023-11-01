@@ -7,6 +7,8 @@ package millane_proyecto2;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Random;
+
 
 /**
  *
@@ -21,10 +23,10 @@ public class Administrador extends Thread  {
     private Personaje personaje1;
     private Personaje personaje2;
     
-    private Nintendo nintendo;
-    private Capcom capcom;
+    private Empresa nintendo;
+    private Empresa capcom;
 
-    public Administrador(Semaphore mutex, Personaje personaje1, Personaje personaje2, Nintendo nintendo, Capcom capcom) {
+    public Administrador(Semaphore mutex, Personaje personaje1, Personaje personaje2, Empresa nintendo, Empresa capcom) {
         this.mutex = mutex;
         this.personaje1 = personaje1;
         this.personaje2 = personaje2;
@@ -56,19 +58,19 @@ public class Administrador extends Thread  {
         this.personaje2 = personaje2;
     }
 
-    public Nintendo getNintendo() {
+    public Empresa getNintendo() {
         return nintendo;
     }
 
-    public void setNintendo(Nintendo nintendo) {
+    public void setNintendo(Empresa nintendo) {
         this.nintendo = nintendo;
     }
 
-    public Capcom getCapcom() {
+    public Empresa getCapcom() {
         return capcom;
     }
 
-    public void setCapcom(Capcom capcom) {
+    public void setCapcom(Empresa capcom) {
         this.capcom = capcom;
     }
     
@@ -107,7 +109,7 @@ public class Administrador extends Thread  {
    
    
    
-   public void escoger(Nintendo nintendo, Capcom capcom){
+   public void escoger(Empresa nintendo, Empresa capcom){
        //NINTENDO
        if (nintendo.getCola1().isEmpty()){
                if (nintendo.getCola2().isEmpty()){
@@ -149,7 +151,8 @@ public class Administrador extends Thread  {
    }
     
     public void crear(){
-        
+                Random rand = new Random();
+
         int num=rand.nextInt(11);
     }
     
