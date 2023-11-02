@@ -26,10 +26,10 @@ public class Administrador extends Thread  {
     private Empresa nintendo;
     private Empresa capcom;
 
-    public Administrador(Semaphore mutex, Personaje personaje1, Personaje personaje2, Empresa nintendo, Empresa capcom) {
+    public Administrador(Semaphore mutex,Empresa nintendo,Empresa capcom) {
         this.mutex = mutex;
-        this.personaje1 = personaje1;
-        this.personaje2 = personaje2;
+//        this.personaje1 = personaje1;
+//        this.personaje2 = personaje2;
         this.nintendo = nintendo;
         this.capcom = capcom;
     }

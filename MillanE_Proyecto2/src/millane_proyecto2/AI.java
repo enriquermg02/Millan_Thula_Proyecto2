@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class AI extends Thread{
     private int tiempoDeCombate;
     private Semaphore mutex;
-    private Semaphore mutex2;
+   
     private double winProbability;
     private double drawProbability;
     private double noCombatProbability;
@@ -28,9 +28,9 @@ public class AI extends Thread{
     private String estadoCombate;
     private Personaje ganador;
 
-    public AI(Semaphore mutex, Semaphore mutex2, int tiempoDeCombate) {
+    public AI(Semaphore mutex,  int tiempoDeCombate) {
         this.mutex = mutex;
-        this.mutex2 = mutex2;
+        
         this.tiempoDeCombate = tiempoDeCombate;
         this.winProbability = Valores.winProbability;
         this.drawProbability = Valores.drawProbability;
@@ -90,13 +90,7 @@ public class AI extends Thread{
         this.mutex = mutex;
     }
 
-    public Semaphore getMutex2() {
-        return mutex2;
-    }
 
-    public void setMutex2(Semaphore mutex2) {
-        this.mutex2 = mutex2;
-    }
 
     public int getContadorC() {
         return contadorC;

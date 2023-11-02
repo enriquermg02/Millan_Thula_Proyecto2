@@ -15,6 +15,7 @@ public class Personaje {
     private int priority;  
     private int contador; //inanicion
     private String nameGames;  //nombre de juego mamaguevo millan
+    private String Nombre;
     private char idLetter;  //Id que se va a desplegar en la UI
     
     private boolean abilitiesQuality;
@@ -26,8 +27,9 @@ public class Personaje {
     private int randomNumber;
     private int designator;
     
-    public Personaje(int counterPersonajes, String nameGames) {
+    public Personaje(int counterPersonajes,String Nombre, String nameGames) {
         this.idNumber = counterPersonajes;
+        this.Nombre=Nombre;
         this.idLetter = nameGames.charAt(0);
         this.priority = 0;
         this.contador = 0;
@@ -206,9 +208,23 @@ public class Personaje {
     public void setRandomNumber(int randomNumber) {
         this.randomNumber = randomNumber;
     }
-    
-    
-    
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getDesignator() {
+        return designator;
+    }
+
+    public void setDesignator(int designator) {
+        this.designator = designator;
+    }
+  
     
     public void designation(){
         Random rand = new Random();

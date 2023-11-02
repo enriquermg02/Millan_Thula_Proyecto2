@@ -4,17 +4,27 @@
  */
 package millane_proyecto2;
 
+import java.util.concurrent.Semaphore;
+
 /**
  *
  * @author leste
  */
 public class Interfaz extends javax.swing.JFrame {
-
+    
+    Semaphore mutex= new Semaphore(1);
+    Empresa Nintendo= new Empresa();
+    
+    Empresa Capcom= new Empresa();
+    Administrador admin= new Administrador(mutex,Nintendo,Capcom);
+    
     /**
      * Creates new form Interfaz
      */
     public Interfaz() {
         initComponents();
+        Nintendo.llenarBDD("Nintendo");
+        Capcom.llenarBDD("Capcom");
     }
 
     /**
@@ -31,9 +41,13 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        AreaTextoZ1 = new javax.swing.JTextField();
+        AreaTextoZ2 = new javax.swing.JTextField();
+        AreaTextoZ3 = new javax.swing.JTextField();
+        AreaTextoZ4 = new javax.swing.JTextField();
         capcom = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -41,7 +55,12 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        AreaTextoC1 = new javax.swing.JTextField();
+        AreaTextoC4 = new javax.swing.JTextField();
+        AreaTextoC3 = new javax.swing.JTextField();
+        AreaTextoC2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,16 +69,13 @@ public class Interfaz extends javax.swing.JFrame {
         nintendo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Cola 4");
-        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
 
         jLabel11.setText("Cola 3");
-        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         jLabel10.setText("Cola 2");
-        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
-
-        jLabel9.setText("Cola 1");
-        nintendo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         jLabel1.setText("Nintendo");
         nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 20));
@@ -67,32 +83,46 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         nintendo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
 
+        jLabel18.setText("Cola 1");
+        nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        nintendo.add(AreaTextoZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, -1));
+        nintendo.add(AreaTextoZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, -1));
+        nintendo.add(AreaTextoZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 130, -1));
+        nintendo.add(AreaTextoZ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 130, -1));
+
         jPanel1.add(nintendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 500));
 
         capcom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setText("Cola 4");
-        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, -1, -1));
+        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         jLabel14.setText("Cola 3");
-        capcom.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, -1, -1));
+        capcom.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
         jLabel15.setText("Cola 2");
-        capcom.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+        capcom.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
 
         jLabel16.setText("Cola 1");
-        capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
         jLabel2.setText("Capcom");
         capcom.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jLabel4.setText("jLabel4");
         capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        capcom.add(AreaTextoC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, -1));
+        capcom.add(AreaTextoC4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 130, -1));
+        capcom.add(AreaTextoC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 130, -1));
+        capcom.add(AreaTextoC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, -1));
 
         jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 500));
 
         jLabel5.setText("jLabel5");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
+
+        jLabel17.setText("Cola 1");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,6 +174,14 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AreaTextoC1;
+    private javax.swing.JTextField AreaTextoC2;
+    private javax.swing.JTextField AreaTextoC3;
+    private javax.swing.JTextField AreaTextoC4;
+    private javax.swing.JTextField AreaTextoZ1;
+    private javax.swing.JTextField AreaTextoZ2;
+    private javax.swing.JTextField AreaTextoZ3;
+    private javax.swing.JTextField AreaTextoZ4;
     private javax.swing.JPanel capcom;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -153,11 +191,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel nintendo;
     // End of variables declaration//GEN-END:variables

@@ -23,16 +23,16 @@ public class MillanE_Proyecto2 {
         int abilities = rand.nextInt(11);
      
         
-        
-        Personaje enrique= new Personaje(3,"Naruto");
-        Personaje mateo = new Personaje(4,"holi");
-        
+//        
+//        Personaje enrique= new Personaje(3,"Naruto");
+//        Personaje mateo = new Personaje(4,"holi");
+//        
         
         Semaphore mutex1= new Semaphore(1);
         Semaphore mutex2= new Semaphore(1);
 //        Administrador admin= new Administrador(mutex1);
-        AI ERMG= new AI(mutex1, mutex2, 0);
-        ERMG.playRockPaperScissors(enrique, mateo);
+        AI ERMG= new AI(mutex1, 0);
+//        ERMG.playRockPaperScissors(enrique, mateo);
 //        admin.start();
         ERMG.start();
     }
