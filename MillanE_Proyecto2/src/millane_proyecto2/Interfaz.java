@@ -25,6 +25,7 @@ public class Interfaz extends javax.swing.JFrame {
         initComponents();
         Nintendo.llenarBDD("Nintendo");
         Capcom.llenarBDD("Capcom");
+        
     }
 
     /**

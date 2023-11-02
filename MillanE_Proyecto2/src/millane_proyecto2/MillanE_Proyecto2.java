@@ -22,12 +22,12 @@ public class MillanE_Proyecto2 {
         
         int abilities = rand.nextInt(11);
      
-        
+      
 //        
 //        Personaje enrique= new Personaje(3,"Naruto");
 //        Personaje mateo = new Personaje(4,"holi");
 //        
-        
+        Interfaz inter= new Interfaz();
         Semaphore mutex1= new Semaphore(1);
         Semaphore mutex2= new Semaphore(1);
 //        Administrador admin= new Administrador(mutex1);
