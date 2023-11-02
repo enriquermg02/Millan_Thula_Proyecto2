@@ -52,6 +52,7 @@ public class AI extends Thread{
         while (true){
         int result1 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
         int result2 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
+        
 
 
 
