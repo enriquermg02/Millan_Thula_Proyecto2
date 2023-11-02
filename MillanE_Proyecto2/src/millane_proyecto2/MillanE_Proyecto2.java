@@ -28,8 +28,10 @@ public class MillanE_Proyecto2 {
 //        Personaje mateo = new Personaje(4,"holi");
 //        
         Interfaz inter= new Interfaz();
+        inter.setVisible(true);
         Semaphore mutex1= new Semaphore(1);
-        Semaphore mutex2= new Semaphore(1);
+       
+//        Semaphore mutex2= new Semaphore(1);
 //        Administrador admin= new Administrador(mutex1);
         AI ERMG= new AI(mutex1, 0);
 //        ERMG.playRockPaperScissors(enrique, mateo);

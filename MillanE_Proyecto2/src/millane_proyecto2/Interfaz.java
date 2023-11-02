@@ -5,6 +5,7 @@
 package millane_proyecto2;
 
 import java.util.concurrent.Semaphore;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,7 +18,8 @@ public class Interfaz extends javax.swing.JFrame {
     
     Empresa Capcom= new Empresa();
     Administrador admin= new Administrador(mutex,Nintendo,Capcom);
-    
+    HilosGui gui= new HilosGui(getAreaTextoC1(),Nintendo,Capcom);
+       
     /**
      * Creates new form Interfaz
      */
@@ -25,9 +27,78 @@ public class Interfaz extends javax.swing.JFrame {
         initComponents();
         Nintendo.llenarBDD("Nintendo");
         Capcom.llenarBDD("Capcom");
-        
+//       
+//         gui.start();
+        admin.start();
     }
 
+    public JTextField getAreaTextoC1() {
+        return AreaTextoC1;
+    }
+
+    public void setAreaTextoC1(JTextField AreaTextoC1) {
+        this.AreaTextoC1 = AreaTextoC1;
+    }
+
+    public JTextField getAreaTextoC2() {
+        return AreaTextoC2;
+    }
+
+    public void setAreaTextoC2(JTextField AreaTextoC2) {
+        this.AreaTextoC2 = AreaTextoC2;
+    }
+
+    public JTextField getAreaTextoC3() {
+        return AreaTextoC3;
+    }
+
+    public void setAreaTextoC3(JTextField AreaTextoC3) {
+        this.AreaTextoC3 = AreaTextoC3;
+    }
+
+    public JTextField getAreaTextoC4() {
+        return AreaTextoC4;
+    }
+
+    public void setAreaTextoC4(JTextField AreaTextoC4) {
+        this.AreaTextoC4 = AreaTextoC4;
+    }
+
+    public JTextField getAreaTextoZ1() {
+        return AreaTextoZ1;
+    }
+
+    public void setAreaTextoZ1(JTextField AreaTextoZ1) {
+        this.AreaTextoZ1 = AreaTextoZ1;
+    }
+
+    public JTextField getAreaTextoZ2() {
+        return AreaTextoZ2;
+    }
+
+    public void setAreaTextoZ2(JTextField AreaTextoZ2) {
+        this.AreaTextoZ2 = AreaTextoZ2;
+    }
+
+    public JTextField getAreaTextoZ3() {
+        return AreaTextoZ3;
+    }
+
+    public void setAreaTextoZ3(JTextField AreaTextoZ3) {
+        this.AreaTextoZ3 = AreaTextoZ3;
+    }
+
+    public JTextField getAreaTextoZ4() {
+        return AreaTextoZ4;
+    }
+
+    public void setAreaTextoZ4(JTextField AreaTextoZ4) {
+        this.AreaTextoZ4 = AreaTextoZ4;
+    }
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +133,7 @@ public class Interfaz extends javax.swing.JFrame {
         AreaTextoC2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +197,14 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel17.setText("Cola 1");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,6 +218,13 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println(admin.getPersonaje1().getNombre());
+        System.out.println(admin.getPersonaje2().getNombre());
+       
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +271,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField AreaTextoZ3;
     private javax.swing.JTextField AreaTextoZ4;
     private javax.swing.JPanel capcom;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

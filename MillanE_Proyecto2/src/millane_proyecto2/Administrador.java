@@ -32,6 +32,7 @@ public class Administrador extends Thread  {
 //        this.personaje2 = personaje2;
         this.nintendo = nintendo;
         this.capcom = capcom;
+        
     }
 
     public Semaphore getMutex() {
@@ -111,6 +112,7 @@ public class Administrador extends Thread  {
    
    public void escoger(Empresa nintendo, Empresa capcom){
        //NINTENDO
+      
        if (nintendo.getCola1().isEmpty()){
                if (nintendo.getCola2().isEmpty()){
                    if (nintendo.getCola3().isEmpty()){
@@ -132,21 +134,22 @@ public class Administrador extends Thread  {
             
             //Capcom
             if (capcom.getCola1().isEmpty()){
+               
                if (capcom.getCola2().isEmpty()){
                    if (capcom.getCola3().isEmpty()){
                        if (capcom.getCola4().isEmpty()){
                
             }else{
-                personaje1=capcom.getCola4().deQueue();
+                personaje2=capcom.getCola4().deQueue();
             }
             }else{
-                personaje1=capcom.getCola3().deQueue();
+                personaje2=capcom.getCola3().deQueue();
             }
             }else{
-                personaje1=capcom.getCola2().deQueue();
+                personaje2=capcom.getCola2().deQueue();
             }
             }else{
-                personaje1=capcom.getCola1().deQueue();
+                personaje2=capcom.getCola1().deQueue();
             }
    }
     

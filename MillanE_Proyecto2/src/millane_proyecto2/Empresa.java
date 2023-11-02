@@ -109,7 +109,7 @@ public class Empresa {
             
             
             for (int i = 0; i < 9; i++) {
-                 System.out.println(BDD.items[i].getNombre());
+               
                 if (BDD.items[i].getPriority()==4) {
                     cola1.enQueue(BDD.items[i]);
                 }else if(BDD.items[i].getPriority()==3 || BDD.items[i].getPriority()==2){
@@ -142,7 +142,7 @@ public class Empresa {
             BDD.enQueue(nuevo10);
             
             for (int i = 0; i < 9; i++) {
-                System.out.println(BDD.items[i].getNombre());
+               
                 if (BDD.items[i].getPriority()==4) {
                     cola1.enQueue(BDD.items[i]);
                 }else if(BDD.items[i].getPriority()==3 || BDD.items[i].getPriority()==2){
@@ -156,5 +156,9 @@ public class Empresa {
         
         
     }
+    
+    
+    
+ 
     
 }
