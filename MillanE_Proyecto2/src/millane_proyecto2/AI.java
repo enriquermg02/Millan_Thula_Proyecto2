@@ -9,6 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -17,7 +19,7 @@ import javax.swing.JOptionPane;
 public class AI extends Thread{
     private int tiempoDeCombate;
     private Semaphore mutex;
-   
+    private String status;
     private double winProbability;
     private double drawProbability;
     private double noCombatProbability;
@@ -27,10 +29,15 @@ public class AI extends Thread{
     private Personaje capcomPersonaje;
     private String estadoCombate;
     private Personaje ganador;
+    public Empresa capcom;
+    public Empresa nintendo;
+    public Minijuego mini;
 
-    public AI(Semaphore mutex,  int tiempoDeCombate) {
+    public AI(Semaphore mutex,  int tiempoDeCombate, Empresa nintendo, Empresa capcom, Minijuego mini) {
         this.mutex = mutex;
-        
+        this.nintendo = nintendo;
+        this.capcom = capcom;
+        this.status = Valores.waitingStatus;
         this.tiempoDeCombate = tiempoDeCombate;
         this.winProbability = Valores.winProbability;
         this.drawProbability = Valores.drawProbability;
@@ -39,35 +46,74 @@ public class AI extends Thread{
         this.nintendoPersonaje = null;
         this.capcomPersonaje = null;
         this.ganador = null;
+        this.mini = mini;
 
     }
     
   
         
-    public Personaje playRockPaperScissors(Personaje nintendo, Personaje capcom) {
+    public Personaje playRockPaperScissors(Personaje nin, Personaje cap) {
         // Getting input from the user
-        System.out.println("Make a move! (rock/paper/scissors)");
         JFrame frame = new JFrame();
+        this.mini.setVisible(true);
         
         while (true){
-        int result1 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
-        int result2 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
+                        waitTime();
+        int result1 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Nintendo, haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
+        int result2 = Integer.parseInt(JOptionPane.showInputDialog(frame, "Capcom, haz un movimiento!! (piedra(1)/papel(2)/tijeras(3)"));
         
 
 
 
         // Print results
         if (result1 == result2) {
-            JOptionPane.showMessageDialog(frame, "Es un empate, juega de nuevo!");
+            detImage(result1, this.mini.derecho);
+            detImage(result2, this.mini.izquierdo);
+            JOptionPane.showMessageDialog(frame, "Es un empate, juega de nuevo!");  
+            
         } else if (playerWins(result1, result2)) {
-            System.out.println("Nintendo gana!");
-            return nintendo;
+            detImage(result1, this.mini.derecho);
+            detImage(result2, this.mini.izquierdo);
+            waitTime();
+            JOptionPane.showMessageDialog(frame, "Nintendo Gana!");
+            this.mini.setVisible(false);
+            return nin;
 
         } else {
-            System.out.println("Capcom gana!");
-            return capcom;
+            detImage(result1, this.mini.derecho);
+            detImage(result2, this.mini.izquierdo);
+            waitTime();
+            JOptionPane.showMessageDialog(frame, "Capcom Gana!");  
+            this.mini.setVisible(false);
+            return cap;
 
         }
+        }
+
+    }
+    public void waitTime(){
+            try {
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(AI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+    public void detImage(int result, javax.swing.JLabel label){
+        ImageIcon rockIcon = new ImageIcon(getClass().getResource("/assets/rock.gif"));
+        ImageIcon paperIcon = new ImageIcon(getClass().getResource("/assets/paper (1).jpg"));
+        ImageIcon scissorIcon = new ImageIcon(getClass().getResource("/assets/scissor (1).jpg"));
+
+        if (result == 1) 
+        {
+            label.setIcon(rockIcon);
+        }
+        else if(result == 2){
+            label.setIcon(paperIcon);
+        }
+        else
+        {
+            label.setIcon(scissorIcon);
         }
 
     }
@@ -111,21 +157,21 @@ public class AI extends Thread{
     
     
     
-    public void combat(Personaje nintendo, Personaje capcom){
+    public void combat(Personaje nin, Personaje cap){
         if (nintendo != null && capcom != null) {
             try {
                 sleep(1);
                 mutex.release();
-                this.setNintendoPersonaje(nintendo);
-                this.setCapcomPersonaje(capcom);
-                this.setEstadoCombate(Valores.decidingStatus);
+                this.setNintendoPersonaje(nin);
+                this.setCapcomPersonaje(cap);
+                this.setStatus(Valores.decidingStatus);
 
                 sleep((this.tiempoDeCombate * 1000) - 500) ;
-                this.setEstadoCombate(Valores.announcingStatus);
+                this.setStatus(Valores.announcingStatus);
                 sleep(500); 
                 double randomNum = Math.random();
                 if (randomNum <= this.winProbability) {
-                    Personaje winner = playRockPaperScissors(nintendo, capcom);
+                    Personaje winner = playRockPaperScissors(nin, cap);
                     this.estadoCombate = Valores.win;
                     this.setGanador(winner);
                 } else if (randomNum <= this.winProbability + this.getDrawProbability()) {
@@ -134,7 +180,7 @@ public class AI extends Thread{
                     this.estadoCombate = Valores.noCombat;
                 }
                 this.cantidadCombates++;
-                this.setEstadoCombate(Valores.waitingStatus);
+                this.setStatus(Valores.waitingStatus);
                 sleep(500); 
                 mutex.acquire();
 
@@ -268,6 +314,20 @@ public class AI extends Thread{
      */
     public void setGanador(Personaje ganador) {
         this.ganador = ganador;
+    }
+
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 }

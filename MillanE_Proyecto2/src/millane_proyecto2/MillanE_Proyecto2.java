@@ -17,26 +17,11 @@ public class MillanE_Proyecto2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Random rand = new Random();
-        
-        int abilities = rand.nextInt(11);
-     
-      
-//        
-//        Personaje enrique= new Personaje(3,"Naruto");
-//        Personaje mateo = new Personaje(4,"holi");
-//        
+        // TODO code application logic here        
+         
         Interfaz inter= new Interfaz();
-        inter.setVisible(true);
-        Semaphore mutex1= new Semaphore(1);
-       
-//        Semaphore mutex2= new Semaphore(1);
-//        Administrador admin= new Administrador(mutex1);
-        AI ERMG= new AI(mutex1, 0);
-//        ERMG.playRockPaperScissors(enrique, mateo);
-//        admin.start();
-        ERMG.start();
+        inter.setVisible(true);   
+
     }
     
 }

@@ -28,8 +28,7 @@ public class Administrador extends Thread  {
 
     public Administrador(Semaphore mutex,Empresa nintendo,Empresa capcom) {
         this.mutex = mutex;
-//        this.personaje1 = personaje1;
-//        this.personaje2 = personaje2;
+        
         this.nintendo = nintendo;
         this.capcom = capcom;
         
@@ -76,15 +75,8 @@ public class Administrador extends Thread  {
     }
     
     
-    
-    
-    
     public void run(){
-        while(true) {
-          
-            hola();
-       
-        }
+       hola();
     }
     
    public void hola(){

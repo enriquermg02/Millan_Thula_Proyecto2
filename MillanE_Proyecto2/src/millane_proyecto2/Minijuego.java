@@ -28,7 +28,9 @@ public class Minijuego extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        derecho = new javax.swing.JLabel();
+        izquierdo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -36,14 +38,22 @@ public class Minijuego extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("DUELO A MUERTE");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("ppppppppppppp");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        derecho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/rock.gif"))); // NOI18N
+        derecho.setText("jLabel3");
+        jPanel1.add(derecho, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 150, -1));
+
+        izquierdo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/paper (1).jpg"))); // NOI18N
+        izquierdo.setText("jLabel3");
+        jPanel1.add(izquierdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 150, -1));
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("VS");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/mortalkombat.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -98,9 +108,11 @@ public class Minijuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel derecho;
+    public javax.swing.JLabel izquierdo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

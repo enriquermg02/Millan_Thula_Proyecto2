@@ -18,8 +18,14 @@ public class Interfaz extends javax.swing.JFrame {
     
     Empresa Capcom= new Empresa();
     Administrador admin= new Administrador(mutex,Nintendo,Capcom);
+    Minijuego mini = new Minijuego();
+    
+    AI ERMG= new AI(mutex, 1, Nintendo, Capcom, mini);
+
+    
+    
     HilosGui gui= new HilosGui(getAreaTextoC1(),Nintendo,Capcom);
-       
+      
     /**
      * Creates new form Interfaz
      */
