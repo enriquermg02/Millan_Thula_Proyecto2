@@ -18,10 +18,23 @@ public class MillanE_Proyecto2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here        
-         
-        Interfaz inter= new Interfaz();
+         Semaphore mutex= new Semaphore(1);
+        Empresa Nintendo= new Empresa();
+        
+        Empresa Capcom= new Empresa();
+        
+        Nintendo.llenarBDD("Nintendo");
+        Capcom.llenarBDD("Capcom");
+        Administrador admin= new Administrador(mutex,Nintendo,Capcom);
+        Interfaz inter= new Interfaz(Nintendo,Capcom,mutex,admin);
         inter.setVisible(true);   
-
+        
+       
+         HilosGui gui= new HilosGui(inter,Nintendo, Capcom);
+         gui.start();
+        
+         
+         
     }
     
 }

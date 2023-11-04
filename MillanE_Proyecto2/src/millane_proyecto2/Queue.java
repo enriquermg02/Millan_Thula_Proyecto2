@@ -57,6 +57,27 @@ public class Queue {
         
     }
     
+    
+    
+    
+    public Personaje owo(){
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+           return null;
+        } else  {
+            Personaje nodo = items[front];
+            
+            return nodo;
+        } 
+           
+         
+        }
+    
+    
+    
+    
+    
+    
     public int size() {
         if (isEmpty()) {
             return 0;
@@ -97,9 +118,9 @@ public class Queue {
             for (int i = front; i <= rear; i++) {
                 if (items[i] != null) {
                     if (i == 0) {
-                        result += items[i].getId();
+                        result += items[i].getNombre();
                     } else {
-                        result += "," + items[i].getId();
+                        result += "," + items[i].getNombre();
                     }
                 } else {
                     System.out.println("hay null"); //revisar

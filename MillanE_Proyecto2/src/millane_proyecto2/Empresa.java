@@ -18,13 +18,13 @@ public class Empresa {
     private Queue BDD;
 
     public Empresa() {
-        this.cola1 = new Queue(10);
-        this.cola2 = new Queue(10);
-        this.cola3 = new Queue(10);
+        this.cola1 = new Queue(11);
+        this.cola2 = new Queue(11);
+        this.cola3 = new Queue(11);
         this.cola4 = new Queue(10);
         this.Refuerzo = new Queue(10);
         this.Ganadores = new Queue(10);
-        this.BDD = new Queue(10);
+        this.BDD = new Queue(11);
     }
 
     public Queue getCola1() {
@@ -108,11 +108,11 @@ public class Empresa {
             BDD.enQueue(nuevo10);
             
             
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 10; i++) {
                
                 if (BDD.items[i].getPriority()==4) {
                     cola1.enQueue(BDD.items[i]);
-                }else if(BDD.items[i].getPriority()==3 || BDD.items[i].getPriority()==2){
+                }else if(BDD.items[i].getPriority()==3 ){
                     cola2.enQueue(BDD.items[i]);
                 }else{
                     cola3.enQueue(BDD.items[i]);
@@ -145,7 +145,7 @@ public class Empresa {
                
                 if (BDD.items[i].getPriority()==4) {
                     cola1.enQueue(BDD.items[i]);
-                }else if(BDD.items[i].getPriority()==3 || BDD.items[i].getPriority()==2){
+                }else if(BDD.items[i].getPriority()==3 ){
                     cola2.enQueue(BDD.items[i]);
                 }else{
                     cola3.enQueue(BDD.items[i]);

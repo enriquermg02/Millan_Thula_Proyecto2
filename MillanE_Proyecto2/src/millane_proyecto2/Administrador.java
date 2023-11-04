@@ -86,7 +86,7 @@ public class Administrador extends Thread  {
             mutex.acquire();
             
             escoger(nintendo,capcom);
-            
+           
             //CREAR NUEVO PERSONAJE
             
             
@@ -111,16 +111,16 @@ public class Administrador extends Thread  {
                        if (nintendo.getCola4().isEmpty()){
                
             }else{
-                personaje1=nintendo.getCola4().deQueue();
+                personaje1=nintendo.getCola4().owo();
             }
             }else{
-                personaje1=nintendo.getCola3().deQueue();
+                personaje1=nintendo.getCola3().owo();
             }
             }else{
-                personaje1=nintendo.getCola2().deQueue();
+                personaje1=nintendo.getCola2().owo();
             }
             }else{
-                personaje1=nintendo.getCola1().deQueue();
+                personaje1=nintendo.getCola1().owo();
             }
             
             
@@ -132,16 +132,16 @@ public class Administrador extends Thread  {
                        if (capcom.getCola4().isEmpty()){
                
             }else{
-                personaje2=capcom.getCola4().deQueue();
+                personaje2=capcom.getCola4().owo();
             }
             }else{
-                personaje2=capcom.getCola3().deQueue();
+                personaje2=capcom.getCola3().owo();
             }
             }else{
-                personaje2=capcom.getCola2().deQueue();
+                personaje2=capcom.getCola2().owo();
             }
             }else{
-                personaje2=capcom.getCola1().deQueue();
+                personaje2=capcom.getCola1().owo();
             }
    }
     

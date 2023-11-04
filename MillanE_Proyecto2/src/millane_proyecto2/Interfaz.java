@@ -5,6 +5,7 @@
 package millane_proyecto2;
 
 import java.util.concurrent.Semaphore;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -13,94 +14,108 @@ import javax.swing.JTextField;
  */
 public class Interfaz extends javax.swing.JFrame {
     
-    Semaphore mutex= new Semaphore(1);
-    Empresa Nintendo= new Empresa();
+    static Semaphore mutex;
+    static Empresa Nintendo;
     
-    Empresa Capcom= new Empresa();
-    Administrador admin= new Administrador(mutex,Nintendo,Capcom);
+    static Empresa Capcom;
+    static Administrador admin;
     Minijuego mini = new Minijuego();
     
     AI ERMG= new AI(mutex, 1, Nintendo, Capcom, mini);
 
+  
     
-    
-    HilosGui gui= new HilosGui(getAreaTextoC1(),Nintendo,Capcom);
       
     /**
      * Creates new form Interfaz
      */
-    public Interfaz() {
+    public Interfaz(Empresa Nintendo, Empresa Capcom,Semaphore mutex, Administrador admin) {
+        this.Nintendo=Nintendo;
+        this.Capcom=Capcom;
+        this.admin=admin;
+        this.mutex=mutex;
         initComponents();
-        Nintendo.llenarBDD("Nintendo");
-        Capcom.llenarBDD("Capcom");
+        
 //       
 //         gui.start();
+   
         admin.start();
     }
 
-    public JTextField getAreaTextoC1() {
-        return AreaTextoC1;
-    }
-
-    public void setAreaTextoC1(JTextField AreaTextoC1) {
-        this.AreaTextoC1 = AreaTextoC1;
-    }
-
-    public JTextField getAreaTextoC2() {
-        return AreaTextoC2;
-    }
-
-    public void setAreaTextoC2(JTextField AreaTextoC2) {
-        this.AreaTextoC2 = AreaTextoC2;
-    }
-
-    public JTextField getAreaTextoC3() {
-        return AreaTextoC3;
-    }
-
-    public void setAreaTextoC3(JTextField AreaTextoC3) {
-        this.AreaTextoC3 = AreaTextoC3;
-    }
-
-    public JTextField getAreaTextoC4() {
-        return AreaTextoC4;
-    }
-
-    public void setAreaTextoC4(JTextField AreaTextoC4) {
-        this.AreaTextoC4 = AreaTextoC4;
-    }
-
-    public JTextField getAreaTextoZ1() {
-        return AreaTextoZ1;
-    }
-
-    public void setAreaTextoZ1(JTextField AreaTextoZ1) {
-        this.AreaTextoZ1 = AreaTextoZ1;
-    }
-
-    public JTextField getAreaTextoZ2() {
+    public JTextArea getAreaTextoZ2() {
         return AreaTextoZ2;
     }
 
-    public void setAreaTextoZ2(JTextField AreaTextoZ2) {
+    public void setAreaTextoZ2(JTextArea AreaTextoZ2) {
         this.AreaTextoZ2 = AreaTextoZ2;
     }
 
-    public JTextField getAreaTextoZ3() {
+    public JTextArea getAreaTextoC1() {
+        return AreaTextoC1;
+    }
+
+    public void setAreaTextoC1(JTextArea AreaTextoC1) {
+        this.AreaTextoC1 = AreaTextoC1;
+    }
+
+    public JTextArea getAreaTextoC2() {
+        return AreaTextoC2;
+    }
+
+    public void setAreaTextoC2(JTextArea AreaTextoC2) {
+        this.AreaTextoC2 = AreaTextoC2;
+    }
+
+    public JTextArea getAreaTextoC3() {
+        return AreaTextoC3;
+    }
+
+    public void setAreaTextoC3(JTextArea AreaTextoC3) {
+        this.AreaTextoC3 = AreaTextoC3;
+    }
+
+    public JTextArea getAreaTextoC4() {
+        return AreaTextoC4;
+    }
+
+    public void setAreaTextoC4(JTextArea AreaTextoC4) {
+        this.AreaTextoC4 = AreaTextoC4;
+    }
+    
+    
+
+    
+    public JTextArea getAreaTextoZ1() {
+        return AreaTextoZ1;
+    }
+
+    public void setAreaTextoZ1(JTextArea AreaTextoZ1) {
+        this.AreaTextoZ1 = AreaTextoZ1;
+    }
+
+    public JTextArea getAreaTextoZ3() {
         return AreaTextoZ3;
     }
 
-    public void setAreaTextoZ3(JTextField AreaTextoZ3) {
+    public void setAreaTextoZ3(JTextArea AreaTextoZ3) {
         this.AreaTextoZ3 = AreaTextoZ3;
     }
 
-    public JTextField getAreaTextoZ4() {
+    
+
+    
+
+
+
+    public JTextArea getAreaTextoZ4() {
         return AreaTextoZ4;
     }
 
-    public void setAreaTextoZ4(JTextField AreaTextoZ4) {
+    public void setAreaTextoZ4(JTextArea AreaTextoZ4) {
         this.AreaTextoZ4 = AreaTextoZ4;
     }
+
+  
 
     
     
@@ -122,10 +137,14 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        AreaTextoZ1 = new javax.swing.JTextField();
-        AreaTextoZ2 = new javax.swing.JTextField();
-        AreaTextoZ3 = new javax.swing.JTextField();
-        AreaTextoZ4 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AreaTextoZ2 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        AreaTextoZ1 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        AreaTextoZ4 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        AreaTextoZ3 = new javax.swing.JTextArea();
         capcom = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -133,10 +152,14 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        AreaTextoC1 = new javax.swing.JTextField();
-        AreaTextoC4 = new javax.swing.JTextField();
-        AreaTextoC3 = new javax.swing.JTextField();
-        AreaTextoC2 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        AreaTextoC1 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        AreaTextoC2 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        AreaTextoC3 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        AreaTextoC4 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -148,13 +171,13 @@ public class Interfaz extends javax.swing.JFrame {
         nintendo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Cola 4");
-        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
         jLabel11.setText("Cola 3");
-        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel10.setText("Cola 2");
-        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel1.setText("Nintendo");
         nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 20));
@@ -163,37 +186,77 @@ public class Interfaz extends javax.swing.JFrame {
         nintendo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
 
         jLabel18.setText("Cola 1");
-        nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
-        nintendo.add(AreaTextoZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, -1));
-        nintendo.add(AreaTextoZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, -1));
-        nintendo.add(AreaTextoZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 130, -1));
-        nintendo.add(AreaTextoZ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 130, -1));
+        nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        AreaTextoZ2.setColumns(20);
+        AreaTextoZ2.setRows(5);
+        jScrollPane1.setViewportView(AreaTextoZ2);
+
+        nintendo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+
+        AreaTextoZ1.setColumns(20);
+        AreaTextoZ1.setRows(5);
+        jScrollPane2.setViewportView(AreaTextoZ1);
+
+        nintendo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+
+        AreaTextoZ4.setColumns(20);
+        AreaTextoZ4.setRows(5);
+        jScrollPane4.setViewportView(AreaTextoZ4);
+
+        nintendo.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+
+        AreaTextoZ3.setColumns(20);
+        AreaTextoZ3.setRows(5);
+        jScrollPane9.setViewportView(AreaTextoZ3);
+
+        nintendo.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         jPanel1.add(nintendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 500));
 
         capcom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setText("Cola 4");
-        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
+        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
 
         jLabel14.setText("Cola 3");
-        capcom.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        capcom.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
 
         jLabel15.setText("Cola 2");
-        capcom.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
+        capcom.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
         jLabel16.setText("Cola 1");
-        capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
+        capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
         jLabel2.setText("Capcom");
         capcom.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
         jLabel4.setText("jLabel4");
         capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
-        capcom.add(AreaTextoC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 130, -1));
-        capcom.add(AreaTextoC4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 130, -1));
-        capcom.add(AreaTextoC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 130, -1));
-        capcom.add(AreaTextoC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, -1));
+
+        AreaTextoC1.setColumns(20);
+        AreaTextoC1.setRows(5);
+        jScrollPane5.setViewportView(AreaTextoC1);
+
+        capcom.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        AreaTextoC2.setColumns(20);
+        AreaTextoC2.setRows(5);
+        jScrollPane6.setViewportView(AreaTextoC2);
+
+        capcom.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        AreaTextoC3.setColumns(20);
+        AreaTextoC3.setRows(5);
+        jScrollPane7.setViewportView(AreaTextoC3);
+
+        capcom.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        AreaTextoC4.setColumns(20);
+        AreaTextoC4.setRows(5);
+        jScrollPane8.setViewportView(AreaTextoC4);
+
+        capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 500));
 
@@ -226,10 +289,10 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
+       
         System.out.println(admin.getPersonaje1().getNombre());
         System.out.println(admin.getPersonaje2().getNombre());
-       
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -262,20 +325,20 @@ public class Interfaz extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interfaz().setVisible(true);
+                new Interfaz( Nintendo,  Capcom,mutex,admin).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AreaTextoC1;
-    private javax.swing.JTextField AreaTextoC2;
-    private javax.swing.JTextField AreaTextoC3;
-    private javax.swing.JTextField AreaTextoC4;
-    private javax.swing.JTextField AreaTextoZ1;
-    private javax.swing.JTextField AreaTextoZ2;
-    private javax.swing.JTextField AreaTextoZ3;
-    private javax.swing.JTextField AreaTextoZ4;
+    private javax.swing.JTextArea AreaTextoC1;
+    private javax.swing.JTextArea AreaTextoC2;
+    private javax.swing.JTextArea AreaTextoC3;
+    private javax.swing.JTextArea AreaTextoC4;
+    private javax.swing.JTextArea AreaTextoZ1;
+    private javax.swing.JTextArea AreaTextoZ2;
+    private javax.swing.JTextArea AreaTextoZ3;
+    private javax.swing.JTextArea AreaTextoZ4;
     private javax.swing.JPanel capcom;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -293,6 +356,14 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JPanel nintendo;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,26 +12,28 @@ import javax.swing.JTextField;
  */
 public class HilosGui extends Thread{
     
-     javax.swing.JTextField AreaTextoC1;
-     javax.swing.JTextField AreaTextoC2;
-     javax.swing.JTextField AreaTextoC3;
-     javax.swing.JTextField AreaTextoC4;
-     javax.swing.JTextField AreaTextoZ1;
-     javax.swing.JTextField AreaTextoZ2;
-     javax.swing.JTextField AreaTextoZ3;
-     javax.swing.JTextField AreaTextoZ4;
+   
+//     javax.swing.JTextField AreaTextoC2;
+//     javax.swing.JTextField AreaTextoC3;
+//     javax.swing.JTextField AreaTextoC4;
+//     javax.swing.JTextField AreaTextoZ1;
+//     javax.swing.JTextField AreaTextoZ2;
+//     javax.swing.JTextField AreaTextoZ3;
+//     javax.swing.JTextField AreaTextoZ4;
+    Interfaz inter;
      Empresa Nintendo;
      Empresa Capcom;
 
-    public HilosGui(JTextField AreaTextoC1,Empresa Nintendo,Empresa Capcom) {
-        this.AreaTextoC1 = AreaTextoC1;
-        this.AreaTextoC2 = AreaTextoC2;
-        this.AreaTextoC3 = AreaTextoC3;
-        this.AreaTextoC4 = AreaTextoC4;
-        this.AreaTextoZ1 = AreaTextoZ1;
-        this.AreaTextoZ2 = AreaTextoZ2;
-        this.AreaTextoZ3 = AreaTextoZ3;
-        this.AreaTextoZ4 = AreaTextoZ4;
+    public HilosGui(Interfaz inter,Empresa Nintendo,Empresa Capcom) {
+//        this.AreaTextoC1 = AreaTextoC1;
+//        this.AreaTextoC2 = AreaTextoC2;
+//        this.AreaTextoC3 = AreaTextoC3;
+//        this.AreaTextoC4 = AreaTextoC4;
+//        this.AreaTextoZ1 = AreaTextoZ1;
+//        this.AreaTextoZ2 = AreaTextoZ2;
+//        this.AreaTextoZ3 = AreaTextoZ3;
+//        this.AreaTextoZ4 = AreaTextoZ4;
+         this.inter=inter;
         this.Nintendo = Nintendo;
         this.Capcom = Capcom;
     }
@@ -40,9 +42,16 @@ public class HilosGui extends Thread{
     
     public void run(){
         while(true) {
-          AreaTextoC1.setText("erique millam");
-//           actu();
-//       
+           
+
+            cola(Nintendo.getCola1(),inter.getAreaTextoZ1());
+            cola(Nintendo.getCola2(),inter.getAreaTextoZ2());
+            cola(Nintendo.getCola3(),inter.getAreaTextoZ3());
+            cola(Nintendo.getCola4(),inter.getAreaTextoZ4());
+             cola(Capcom.getCola1(),inter.getAreaTextoC1());
+        cola(Capcom.getCola2(),inter.getAreaTextoC2());
+        cola(Capcom.getCola3(),inter.getAreaTextoC3());
+        cola(Capcom.getCola4(),inter.getAreaTextoC4());
         }
     }
     
@@ -50,14 +59,9 @@ public class HilosGui extends Thread{
     public void actu(){
         
 //        
-//        cola(Nintendo.getCola1(),AreaTextoC1);
-//        cola(Nintendo.getCola2(),AreaTextoC2);
-//        cola(Nintendo.getCola3(),AreaTextoC3);
-//        cola(Nintendo.getCola4(),AreaTextoC4);
-//        cola(Capcom.getCola1(),AreaTextoZ1);
-//        cola(Capcom.getCola2(),AreaTextoZ2);
-//        cola(Capcom.getCola3(),AreaTextoZ3);
-//        cola(Capcom.getCola4(),AreaTextoZ4);
+        
+//        
+
       
 //         AreaTextoC1.setText("erique millam");
 //        
@@ -68,28 +72,17 @@ public class HilosGui extends Thread{
         
     }
     
-    public void cola(Queue cola,javax.swing.JTextField AreaTexto){
+    public void cola(Queue cola,javax.swing.JTextArea AreaTexto){
      
         String prueba= "";
         
         if(cola.isEmpty()){
-//            AreaTexto.setText("erique millam");
-         
+        
+         AreaTexto.setText("");
         }else{
-            System.out.println("rafael");
-//            for (int i = 0; i < 3; i++) {       
-//                System.out.println("uwu");
-//                if (cola.getItems()[i]!=null) {
-//                    System.out.println("no null");
-////                    
-////                    prueba+=cola.getItems()[i].getNombre();
-////                    prueba+=" ";
-//                    
-//                }else{
-//                    System.out.println("null");
-//                }
-//            }
-            AreaTexto.setText("erique millam");
+           
+           
+            AreaTexto.setText(cola.displayQueue());
             
         }
         

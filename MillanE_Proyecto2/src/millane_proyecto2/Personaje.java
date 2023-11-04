@@ -229,25 +229,25 @@ public class Personaje {
     public void designation(){
         Random rand = new Random();
         
-        int abilities = rand.nextInt(11);
-        int hp = rand.nextInt(11);
-        int force = rand.nextInt(11);
-        int agility = rand.nextInt(11);
+        int abilities = rand.nextInt(101);
+        int hp = rand.nextInt(101);
+        int force = rand.nextInt(101);
+        int agility = rand.nextInt(101);
         
         
-        if (abilities>=6){
+        if (abilities>=40){//6
             this.abilitiesQuality=true;
             priority++;
         }
-        if (hp>=7){
+        if (hp>=30){//7
             this.hpQuality=true;
             priority++;
         }
-        if (force>=5){
+        if (force>=50){//5
             this.forceQuality=true;
             priority++;
         }
-        if (agility>=4){
+        if (agility>=60){//4
             this.agilityQuality=true;
             priority++;
         }
