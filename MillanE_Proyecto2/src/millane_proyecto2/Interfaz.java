@@ -170,8 +170,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         nintendo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setText("Cola 4");
-        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        jLabel12.setText("Refuerzo");
+        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
         jLabel11.setText("Cola 3");
         nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
@@ -216,7 +216,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         capcom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setText("Cola 4");
+        jLabel13.setText("Refuerzo");
         capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
 
         jLabel14.setText("Cola 3");
@@ -238,25 +238,25 @@ public class Interfaz extends javax.swing.JFrame {
         AreaTextoC1.setRows(5);
         jScrollPane5.setViewportView(AreaTextoC1);
 
-        capcom.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        capcom.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         AreaTextoC2.setColumns(20);
         AreaTextoC2.setRows(5);
         jScrollPane6.setViewportView(AreaTextoC2);
 
-        capcom.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        capcom.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
         AreaTextoC3.setColumns(20);
         AreaTextoC3.setRows(5);
         jScrollPane7.setViewportView(AreaTextoC3);
 
-        capcom.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        capcom.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
 
         AreaTextoC4.setColumns(20);
         AreaTextoC4.setRows(5);
         jScrollPane8.setViewportView(AreaTextoC4);
 
-        capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, -1));
 
         jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 500));
 
@@ -272,7 +272,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

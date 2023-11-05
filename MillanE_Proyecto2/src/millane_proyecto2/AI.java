@@ -176,8 +176,12 @@ public class AI extends Thread{
                     this.setGanador(winner);
                 } else if (randomNum <= this.winProbability + this.getDrawProbability()) {
                     this.estadoCombate = Valores.draw;
+                    this.nintendo.getCola1().enQueue(nin);
+                    this.capcom.getCola1().enQueue(cap);
                 } else {
                     this.estadoCombate = Valores.noCombat;
+                    this.nintendo.getCola4().enQueue(nin);
+                    this.nintendo.getCola4().enQueue(cap);
                 }
                 this.cantidadCombates++;
                 this.setStatus(Valores.waitingStatus);

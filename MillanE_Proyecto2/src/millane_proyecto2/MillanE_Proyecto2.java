@@ -30,8 +30,8 @@ public class MillanE_Proyecto2 {
         inter.setVisible(true);   
         
        
-         HilosGui gui= new HilosGui(inter,Nintendo, Capcom);
-         gui.start();
+        HilosGui gui= new HilosGui(inter,Nintendo, Capcom);
+        gui.start();
         
          
          
