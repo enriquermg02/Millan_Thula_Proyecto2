@@ -14,7 +14,7 @@ public class Personaje {
     private int idNumber;
     private int priority;  
     private int contador; //inanicion
-    private String nameGames;  //nombre de juego mamaguevo millan
+    private String nameGames;  //nombre de juego 
     private String Nombre;
     private char idLetter;  //Id que se va a desplegar en la UI
     

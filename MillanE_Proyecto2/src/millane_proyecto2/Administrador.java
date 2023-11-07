@@ -22,13 +22,13 @@ public class Administrador extends Thread  {
     
     private Personaje personaje1;
     private Personaje personaje2;
-    
+    public AI inteligencia;
     private Empresa nintendo;
     private Empresa capcom;
 
-    public Administrador(Semaphore mutex,Empresa nintendo,Empresa capcom) {
+    public Administrador(Semaphore mutex,Empresa nintendo,Empresa capcom, AI inteligencia) {
         this.mutex = mutex;
-        
+        this.inteligencia = inteligencia;
         this.nintendo = nintendo;
         this.capcom = capcom;
         
@@ -81,11 +81,15 @@ public class Administrador extends Thread  {
     
    public void hola(){
        
-       
+       while(true){
+           
+      
         try {
             mutex.acquire();
             
             escoger(nintendo,capcom);
+            
+           
            
             //CREAR NUEVO PERSONAJE
             
@@ -97,6 +101,7 @@ public class Administrador extends Thread  {
         } catch (InterruptedException ex) {
             Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
         }
+         }
        
    }
    
@@ -111,17 +116,19 @@ public class Administrador extends Thread  {
                        if (nintendo.getCola4().isEmpty()){
                
             }else{
-                personaje1=nintendo.getCola4().owo();
+                this.inteligencia.nintendoPersonaje=nintendo.getCola4().owo();
             }
             }else{
-                personaje1=nintendo.getCola3().owo();
+                this.inteligencia.nintendoPersonaje=nintendo.getCola3().owo();
             }
             }else{
-                personaje1=nintendo.getCola2().owo();
+                this.inteligencia.nintendoPersonaje=nintendo.getCola2().owo();
             }
             }else{
-                personaje1=nintendo.getCola1().owo();
+                this.inteligencia.nintendoPersonaje=nintendo.getCola1().owo();
             }
+       
+            
             
             
             //Capcom
@@ -132,23 +139,34 @@ public class Administrador extends Thread  {
                        if (capcom.getCola4().isEmpty()){
                
             }else{
-                personaje2=capcom.getCola4().owo();
+                this.inteligencia.capcomPersonaje=capcom.getCola4().owo();
             }
             }else{
-                personaje2=capcom.getCola3().owo();
+                this.inteligencia.capcomPersonaje=capcom.getCola3().owo();
             }
             }else{
-                personaje2=capcom.getCola2().owo();
+                this.inteligencia.capcomPersonaje=capcom.getCola2().owo();
             }
             }else{
-                personaje2=capcom.getCola1().owo();
+                this.inteligencia.capcomPersonaje=capcom.getCola1().owo();
             }
+            
+            
+            
+            
    }
     
     public void crear(){
                 Random rand = new Random();
 
         int num=rand.nextInt(11);
+    }
+    
+    
+    public void colas(Personaje personaje1, Personaje personaje2){
+        if ("Empate".equals(this.inteligencia.estadoCombate)) {
+//            this.nintendo.
+        }
     }
     
 }

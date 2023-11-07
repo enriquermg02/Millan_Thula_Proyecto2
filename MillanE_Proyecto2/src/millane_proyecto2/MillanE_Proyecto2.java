@@ -22,13 +22,15 @@ public class MillanE_Proyecto2 {
         Empresa Nintendo= new Empresa();
         
         Empresa Capcom= new Empresa();
-        
+        Minijuego mini = new Minijuego();
         Nintendo.llenarBDD("Nintendo");
         Capcom.llenarBDD("Capcom");
-        Administrador admin= new Administrador(mutex,Nintendo,Capcom);
+        AI inteligencia = new AI(mutex, 3, Nintendo, Capcom, mini );
+        Administrador admin= new Administrador(mutex,Nintendo,Capcom,inteligencia);
         Interfaz inter= new Interfaz(Nintendo,Capcom,mutex,admin);
         inter.setVisible(true);   
-        
+        admin.start();
+        inteligencia.start();
        
         HilosGui gui= new HilosGui(inter,Nintendo, Capcom);
         gui.start();

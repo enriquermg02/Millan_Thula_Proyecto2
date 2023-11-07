@@ -39,7 +39,7 @@ public class Interfaz extends javax.swing.JFrame {
 //       
 //         gui.start();
    
-        admin.start();
+//        admin.start();
     }
 
     public JTextArea getAreaTextoZ2() {
@@ -291,8 +291,8 @@ public class Interfaz extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
        
-        System.out.println(admin.getPersonaje1().getNombre());
-        System.out.println(admin.getPersonaje2().getNombre());
+        System.out.println(admin.inteligencia.nintendoPersonaje.getNombre());
+        System.out.println(admin.inteligencia.capcomPersonaje.getNombre());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

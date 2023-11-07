@@ -25,9 +25,9 @@ public class AI extends Thread{
     private double noCombatProbability;
     private int contadorC;
     private int cantidadCombates;
-    private Personaje nintendoPersonaje;
-    private Personaje capcomPersonaje;
-    private String estadoCombate;
+    public Personaje nintendoPersonaje;
+    public Personaje capcomPersonaje;
+    public String estadoCombate;
     private Personaje ganador;
     public Empresa capcom;
     public Empresa nintendo;
@@ -147,13 +147,13 @@ public class AI extends Thread{
         this.contadorC = contadorC;
     }
 
-//    @Override
-//    public void run() {
-//        while(true) {
-//           
-//            combat();
-//        }
-//    }
+    @Override
+    public void run() {
+        while(true) {
+           
+            combat(this.nintendoPersonaje, this.capcomPersonaje);
+        }
+    }
     
     
     
@@ -176,12 +176,8 @@ public class AI extends Thread{
                     this.setGanador(winner);
                 } else if (randomNum <= this.winProbability + this.getDrawProbability()) {
                     this.estadoCombate = Valores.draw;
-                    this.nintendo.getCola1().enQueue(nin);
-                    this.capcom.getCola1().enQueue(cap);
                 } else {
                     this.estadoCombate = Valores.noCombat;
-                    this.nintendo.getCola4().enQueue(nin);
-                    this.nintendo.getCola4().enQueue(cap);
                 }
                 this.cantidadCombates++;
                 this.setStatus(Valores.waitingStatus);
