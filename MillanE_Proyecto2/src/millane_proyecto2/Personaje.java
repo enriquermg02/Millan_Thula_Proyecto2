@@ -27,6 +27,7 @@ public class Personaje {
     private int randomNumber;
     private int designator;
     
+    
     public Personaje(int counterPersonajes,String Nombre, String nameGames) {
         this.idNumber = counterPersonajes;
         this.Nombre=Nombre;

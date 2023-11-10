@@ -28,11 +28,12 @@ public class AI extends Thread{
     public Personaje nintendoPersonaje;
     public Personaje capcomPersonaje;
     public String estadoCombate;
-    private Personaje ganador;
+    public Personaje ganador;
     public Empresa capcom;
     public Empresa nintendo;
     public Minijuego mini;
-
+    public int cont;
+    public int una;
     public AI(Semaphore mutex,  int tiempoDeCombate, Empresa nintendo, Empresa capcom, Minijuego mini) {
         this.mutex = mutex;
         this.nintendo = nintendo;
@@ -47,6 +48,8 @@ public class AI extends Thread{
         this.capcomPersonaje = null;
         this.ganador = null;
         this.mini = mini;
+        this.cont=0;
+        this.una=0;
 
     }
     
@@ -181,7 +184,11 @@ public class AI extends Thread{
                 }
                 this.cantidadCombates++;
                 this.setStatus(Valores.waitingStatus);
+                cont++;
+                una=1;
+                System.out.println(cont);
                 sleep(500); 
+                
                 mutex.acquire();
 
             } catch (InterruptedException ex) {
