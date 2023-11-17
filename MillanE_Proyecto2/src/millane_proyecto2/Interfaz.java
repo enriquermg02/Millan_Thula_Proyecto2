@@ -18,12 +18,7 @@ public class Interfaz extends javax.swing.JFrame {
     static Empresa Nintendo;
     
     static Empresa Capcom;
-    static Administrador admin;
-    Minijuego mini = new Minijuego();
-    
-    AI ERMG= new AI(mutex, 1, Nintendo, Capcom, mini);
-
-  
+    static Administrador admin;    
     
       
     /**
@@ -36,10 +31,6 @@ public class Interfaz extends javax.swing.JFrame {
         this.mutex=mutex;
         initComponents();
         
-//       
-//         gui.start();
-   
-//        admin.start();
     }
 
     public JTextArea getAreaTextoZ2() {
@@ -145,6 +136,7 @@ public class Interfaz extends javax.swing.JFrame {
         AreaTextoZ4 = new javax.swing.JTextArea();
         jScrollPane9 = new javax.swing.JScrollPane();
         AreaTextoZ3 = new javax.swing.JTextArea();
+        ganadasN = new javax.swing.JLabel();
         capcom = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -160,9 +152,27 @@ public class Interfaz extends javax.swing.JFrame {
         AreaTextoC3 = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
         AreaTextoC4 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        ganadasC = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        tiempo = new javax.swing.JSpinner();
+        rondas = new javax.swing.JLabel();
+        estado = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        resultado = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        idN = new javax.swing.JLabel();
+        idC = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -179,11 +189,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel10.setText("Cola 2");
         nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        jLabel1.setText("Nintendo");
-        nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, 20));
+        jLabel1.setText("NINTENDO");
+        nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 20));
 
-        jLabel3.setText("jLabel3");
-        nintendo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        jLabel3.setText("GANADAS");
+        nintendo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         jLabel18.setText("Cola 1");
         nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
@@ -212,7 +222,10 @@ public class Interfaz extends javax.swing.JFrame {
 
         nintendo.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
-        jPanel1.add(nintendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 500));
+        ganadasN.setText("ganadasN");
+        nintendo.add(ganadasN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+
+        jPanel1.add(nintendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 520));
 
         capcom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -228,11 +241,11 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel16.setText("Cola 1");
         capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
-        jLabel2.setText("Capcom");
+        jLabel2.setText("CAPCOM");
         capcom.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jLabel4.setText("jLabel4");
-        capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        jLabel4.setText("GANADAS");
+        capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         AreaTextoC1.setColumns(20);
         AreaTextoC1.setRows(5);
@@ -258,21 +271,77 @@ public class Interfaz extends javax.swing.JFrame {
 
         capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, -1));
 
-        jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 500));
-
-        jLabel5.setText("jLabel5");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
-
-        jLabel17.setText("Cola 1");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
-
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, -1));
+        capcom.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        ganadasC.setText("ganadasN");
+        capcom.add(ganadasC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 520));
+
+        jLabel17.setText("Cola 1");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+
+        jLabel7.setText("Tiempo de simulación");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setText("Rondas");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+
+        tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        jPanel2.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        rondas.setText("0");
+        jPanel2.add(rondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+
+        estado.setText("Estado");
+        jPanel2.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+
+        jLabel5.setText("Inteligencia Artificial");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 350, 190));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        resultado.setText("resultado");
+        jPanel3.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+
+        jLabel22.setText("Capcom");
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
+
+        jLabel23.setText("Nintendo");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
+
+        jLabel25.setText("ID");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+
+        jLabel26.setText("ID");
+        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, 20));
+
+        jLabel28.setText("COMBATIENDO");
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+
+        idN.setText("idN");
+        jPanel3.add(idN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+
+        idC.setText("idC");
+        jPanel3.add(idC, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
+
+        jLabel20.setText("(Ultimo Combate)");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jLabel19.setText("RESULTADOS");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 350, 330));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -339,6 +408,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextArea AreaTextoZ3;
     private javax.swing.JTextArea AreaTextoZ4;
     private javax.swing.JPanel capcom;
+    public javax.swing.JLabel estado;
+    public javax.swing.JLabel ganadasC;
+    public javax.swing.JLabel ganadasN;
+    public javax.swing.JLabel idC;
+    public javax.swing.JLabel idN;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -350,11 +424,22 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
@@ -364,5 +449,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JPanel nintendo;
+    public volatile javax.swing.JLabel resultado;
+    public javax.swing.JLabel rondas;
+    public javax.swing.JSpinner tiempo;
     // End of variables declaration//GEN-END:variables
 }

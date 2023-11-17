@@ -110,6 +110,18 @@ public class Queue {
         }
     }
     
+    public void sumar(){
+        if (isEmpty()) {
+            System.out.println("La cola esta vacia, underflow!!");
+        } else {
+            for (int i = front; i <= rear; i++) {
+                if (items[i] != null) {
+                    items[i].contador++;
+                }
+            }
+        }
+    }
+    
     public String displayQueue() {
         String result = "La cola esta vacia";
         if (!isEmpty()) {
@@ -118,9 +130,9 @@ public class Queue {
             for (int i = front; i <= rear; i++) {
                 if (items[i] != null) {
                     if (i == 0) {
-                        result += items[i].getNombre();
+                        result += items[i].getId();
                     } else {
-                        result += "," + items[i].getNombre();
+                        result += "," + items[i].getId();
                     }
                 } else {
                     System.out.println("hay null"); //revisar

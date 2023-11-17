@@ -157,7 +157,30 @@ public class Empresa {
         
     }
     
+    public void sumar(){
+        recorrer(cola3, cola2);
+        recorrer(cola2, cola1);
+
+    }
     
+    public void recorrer(Queue cola1, Queue cola2){
+        if (cola1.isEmpty()) {
+        }
+        else{
+        for (int i = cola1.front; i <= cola1.rear; i++) {
+            if (cola1.items[i].contador == 8) {
+                    Personaje p = cola1.deQueue();
+                    p.contador = 0;
+                    cola2.enQueue(p);
+                    
+                }
+            
+            }
+        }
+
+        
+        
+    }
     
  
     

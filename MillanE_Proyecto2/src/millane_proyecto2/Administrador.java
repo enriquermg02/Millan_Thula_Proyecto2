@@ -115,6 +115,9 @@ public class Administrador extends Thread  {
            escoger(nintendo,capcom);
            colas();
            crear();
+           nintendo.sumar();
+           capcom.sumar();
+
            
             //CREAR NUEVO PERSONAJE
             
@@ -211,8 +214,8 @@ public class Administrador extends Thread  {
                 nintendo.getBDD().enQueue(NIN);
                 capcom.getBDD().enQueue(CAP);
                 
-                Personaje nuevoN= new Personaje(NIN.getIdNumber(),NIN.getNombre(),"Nintendo");
-                Personaje nuevoC= new Personaje(CAP.getIdNumber(),CAP.getNombre(),"Capcom");
+                Personaje nuevoN= new Personaje(this.inteligencia.cantidadCombates+10,NIN.getNombre(),"Nintendo");
+                Personaje nuevoC= new Personaje(this.inteligencia.cantidadCombates+10,CAP.getNombre(),"Capcom");
                 
                 if (nuevoN.getDesignator()==4) {
                     nintendo.getCola1().enQueue(nuevoN);
@@ -365,5 +368,5 @@ public class Administrador extends Thread  {
             
     
 }
-  
+
 }

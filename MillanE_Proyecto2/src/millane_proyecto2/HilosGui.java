@@ -12,30 +12,17 @@ import javax.swing.JTextField;
  */
 public class HilosGui extends Thread{
     
-   
-//     javax.swing.JTextField AreaTextoC2;
-//     javax.swing.JTextField AreaTextoC3;
-//     javax.swing.JTextField AreaTextoC4;
-//     javax.swing.JTextField AreaTextoZ1;
-//     javax.swing.JTextField AreaTextoZ2;
-//     javax.swing.JTextField AreaTextoZ3;
-//     javax.swing.JTextField AreaTextoZ4;
+
     Interfaz inter;
      Empresa Nintendo;
      Empresa Capcom;
+     AI inteligencia;
 
-    public HilosGui(Interfaz inter,Empresa Nintendo,Empresa Capcom) {
-//        this.AreaTextoC1 = AreaTextoC1;
-//        this.AreaTextoC2 = AreaTextoC2;
-//        this.AreaTextoC3 = AreaTextoC3;
-//        this.AreaTextoC4 = AreaTextoC4;
-//        this.AreaTextoZ1 = AreaTextoZ1;
-//        this.AreaTextoZ2 = AreaTextoZ2;
-//        this.AreaTextoZ3 = AreaTextoZ3;
-//        this.AreaTextoZ4 = AreaTextoZ4;
+    public HilosGui(Interfaz inter,Empresa Nintendo,Empresa Capcom, AI inteligencia) {
          this.inter=inter;
         this.Nintendo = Nintendo;
         this.Capcom = Capcom;
+        this.inteligencia = inteligencia;
     }
     
     
@@ -48,33 +35,35 @@ public class HilosGui extends Thread{
             cola(Nintendo.getCola2(),inter.getAreaTextoZ2());
             cola(Nintendo.getCola3(),inter.getAreaTextoZ3());
             cola(Nintendo.getCola4(),inter.getAreaTextoZ4());
-             cola(Capcom.getCola1(),inter.getAreaTextoC1());
-        cola(Capcom.getCola2(),inter.getAreaTextoC2());
-        cola(Capcom.getCola3(),inter.getAreaTextoC3());
-        cola(Capcom.getCola4(),inter.getAreaTextoC4());
+            cola(Capcom.getCola1(),inter.getAreaTextoC1());
+            cola(Capcom.getCola2(),inter.getAreaTextoC2());
+            cola(Capcom.getCola3(),inter.getAreaTextoC3());
+            cola(Capcom.getCola4(),inter.getAreaTextoC4());
+            
+            inter.estado.setText(inteligencia.status);
+            if (inteligencia.ganador == null) {
+            }
+            else{
+                inter.resultado.setText(inteligencia.ganador.getId());
+            }
+            inter.rondas.setText(String.valueOf(inteligencia.cantidadCombates));
+            inter.ganadasN.setText(String.valueOf(inteligencia.winN));
+            inter.ganadasC.setText(String.valueOf(inteligencia.winC));
+            inter.idN.setText(inteligencia.nintendoPersonaje.getNombre());
+            inter.idC.setText(inteligencia.capcomPersonaje.getNombre());
+            updateTime();
+            
         }
     }
     
     
-    public void actu(){
-        
-//        
-        
-//        
-
-      
-//         AreaTextoC1.setText("erique millam");
-//        
-//        
-        
-        
-        
-        
+    public void updateTime() {
+        int timeToProcess = (Integer)inter.tiempo.getValue();
+        this.inteligencia.setTiempoDeCombate(timeToProcess);
     }
     
     public void cola(Queue cola,javax.swing.JTextArea AreaTexto){
      
-        String prueba= "";
         
         if(cola.isEmpty()){
         
@@ -87,5 +76,6 @@ public class HilosGui extends Thread{
         }
         
     }
+    
     
 }

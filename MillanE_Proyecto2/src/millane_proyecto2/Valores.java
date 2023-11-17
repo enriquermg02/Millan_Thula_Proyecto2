@@ -22,4 +22,5 @@ public class Valores {
     public static String draw = "Empate";
     public static String noCombat = "No se realizó el combate";
     
+         
 }

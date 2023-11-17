@@ -13,7 +13,7 @@ import java.util.Random;
 public class Personaje {
     private int idNumber;
     private int priority;  
-    private int contador; //inanicion
+    public int contador; //inanicion
     private String nameGames;  //nombre de juego 
     private String Nombre;
     private char idLetter;  //Id que se va a desplegar en la UI
@@ -48,7 +48,7 @@ public class Personaje {
     
     
     public String getId() {
-        String result = this.idLetter + (String.valueOf(this.idNumber));
+        String result = this.Nombre + (String.valueOf(this.idNumber));
         return result;
     }
     

@@ -19,12 +19,12 @@ import javax.swing.ImageIcon;
 public class AI extends Thread{
     private int tiempoDeCombate;
     private Semaphore mutex;
-    private String status;
+    public String status;
     private double winProbability;
     private double drawProbability;
     private double noCombatProbability;
     private int contadorC;
-    private int cantidadCombates;
+    public int cantidadCombates;
     public Personaje nintendoPersonaje;
     public Personaje capcomPersonaje;
     public String estadoCombate;
@@ -34,6 +34,9 @@ public class AI extends Thread{
     public Minijuego mini;
     public int cont;
     public int una;
+    public int winN;
+    public int winC;
+    
     public AI(Semaphore mutex,  int tiempoDeCombate, Empresa nintendo, Empresa capcom, Minijuego mini) {
         this.mutex = mutex;
         this.nintendo = nintendo;
@@ -50,6 +53,8 @@ public class AI extends Thread{
         this.mini = mini;
         this.cont=0;
         this.una=0;
+        this.winN = 0;
+        this.winC = 0;
 
     }
     
@@ -79,6 +84,7 @@ public class AI extends Thread{
             detImage(result2, this.mini.izquierdo);
             waitTime();
             JOptionPane.showMessageDialog(frame, "Nintendo Gana!");
+            this.winN++;
             this.mini.setVisible(false);
             return nin;
 
@@ -87,6 +93,7 @@ public class AI extends Thread{
             detImage(result2, this.mini.izquierdo);
             waitTime();
             JOptionPane.showMessageDialog(frame, "Capcom Gana!");  
+            this.winC++;
             this.mini.setVisible(false);
             return cap;
 
@@ -183,12 +190,13 @@ public class AI extends Thread{
                     this.estadoCombate = Valores.noCombat;
                 }
                 this.cantidadCombates++;
+                System.out.println(cantidadCombates);
+                colasSumar();
                 this.setStatus(Valores.waitingStatus);
                 cont++;
                 una=1;
                 System.out.println(cont);
                 sleep(500); 
-                
                 mutex.acquire();
 
             } catch (InterruptedException ex) {
@@ -197,6 +205,14 @@ public class AI extends Thread{
         }
     }
 
+    public void colasSumar(){
+        nintendo.getCola2().sumar();
+        nintendo.getCola3().sumar();
+        capcom.getCola2().sumar();
+        capcom.getCola3().sumar();
+                
+    }
+    
     /**
      * @return the tiempoDeCombate
      */
