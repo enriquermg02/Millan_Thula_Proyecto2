@@ -137,6 +137,7 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         AreaTextoZ3 = new javax.swing.JTextArea();
         ganadasN = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         capcom = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -152,16 +153,17 @@ public class Interfaz extends javax.swing.JFrame {
         AreaTextoC3 = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
         AreaTextoC4 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         ganadasC = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         tiempo = new javax.swing.JSpinner();
         rondas = new javax.swing.JLabel();
         estado = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         resultado = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -173,6 +175,7 @@ public class Interfaz extends javax.swing.JFrame {
         idC = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,166 +183,225 @@ public class Interfaz extends javax.swing.JFrame {
 
         nintendo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("Refuerzo");
-        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        nintendo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Cola 3");
-        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+        nintendo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Cola 2");
-        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        nintendo.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NINTENDO");
-        nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, 20));
+        nintendo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 20));
 
-        jLabel3.setText("GANADAS");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("GANADAS:");
         nintendo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("Cola 1");
-        nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        nintendo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         AreaTextoZ2.setColumns(20);
         AreaTextoZ2.setRows(5);
         jScrollPane1.setViewportView(AreaTextoZ2);
 
-        nintendo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        nintendo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 220, -1));
 
         AreaTextoZ1.setColumns(20);
         AreaTextoZ1.setRows(5);
         jScrollPane2.setViewportView(AreaTextoZ1);
 
-        nintendo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        nintendo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 220, -1));
 
         AreaTextoZ4.setColumns(20);
         AreaTextoZ4.setRows(5);
         jScrollPane4.setViewportView(AreaTextoZ4);
 
-        nintendo.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+        nintendo.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 220, -1));
 
         AreaTextoZ3.setColumns(20);
         AreaTextoZ3.setRows(5);
         jScrollPane9.setViewportView(AreaTextoZ3);
 
-        nintendo.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
+        nintendo.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 220, -1));
 
-        ganadasN.setText("ganadasN");
-        nintendo.add(ganadasN, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+        ganadasN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ganadasN.setForeground(new java.awt.Color(255, 255, 255));
+        ganadasN.setText("0");
+        nintendo.add(ganadasN, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/zeldar.jpg"))); // NOI18N
+        jLabel9.setText("jLabel6");
+        nintendo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 520));
 
         jPanel1.add(nintendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 520));
 
         capcom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Refuerzo");
-        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
+        capcom.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Cola 3");
         capcom.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Cola 2");
         capcom.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Cola 1");
         capcom.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CAPCOM");
-        capcom.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        capcom.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
-        jLabel4.setText("GANADAS");
-        capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("GANADAS:");
+        capcom.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         AreaTextoC1.setColumns(20);
         AreaTextoC1.setRows(5);
         jScrollPane5.setViewportView(AreaTextoC1);
 
-        capcom.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
+        capcom.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 210, -1));
 
         AreaTextoC2.setColumns(20);
         AreaTextoC2.setRows(5);
         jScrollPane6.setViewportView(AreaTextoC2);
 
-        capcom.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
+        capcom.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 210, -1));
 
         AreaTextoC3.setColumns(20);
         AreaTextoC3.setRows(5);
         jScrollPane7.setViewportView(AreaTextoC3);
 
-        capcom.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
+        capcom.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 210, -1));
 
         AreaTextoC4.setColumns(20);
         AreaTextoC4.setRows(5);
         jScrollPane8.setViewportView(AreaTextoC4);
 
-        capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, -1));
+        capcom.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        capcom.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-
-        ganadasC.setText("ganadasN");
+        ganadasC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ganadasC.setForeground(new java.awt.Color(255, 255, 255));
+        ganadasC.setText("0");
         capcom.add(ganadasC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/streetr.jpg"))); // NOI18N
+        capcom.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 520));
 
         jPanel1.add(capcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 310, 520));
 
         jLabel17.setText("Cola 1");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        jLabel7.setText("Tiempo de simulación");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
-
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Rondas");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         tiempo.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        jPanel2.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+        jPanel2.add(tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
+        rondas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        rondas.setForeground(new java.awt.Color(255, 255, 255));
         rondas.setText("0");
-        jPanel2.add(rondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        jPanel2.add(rondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 
+        estado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        estado.setForeground(new java.awt.Color(255, 255, 255));
         estado.setText("Estado");
-        jPanel2.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+        jPanel2.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 110, -1));
 
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Inteligencia Artificial");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Tiempo de simulación");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/aiblur.jpg"))); // NOI18N
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 190));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 350, 190));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        resultado.setText("resultado");
-        jPanel3.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+        resultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        resultado.setForeground(new java.awt.Color(255, 255, 255));
+        resultado.setText("Resultado");
+        jPanel3.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Capcom");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Nintendo");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
 
-        jLabel25.setText("ID");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("ID:");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
-        jLabel26.setText("ID");
-        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, 20));
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26.setText("ID:");
+        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, 20));
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("COMBATIENDO");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
+        idN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idN.setForeground(new java.awt.Color(255, 255, 255));
         idN.setText("idN");
-        jPanel3.add(idN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+        jPanel3.add(idN, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 70, 20));
 
+        idC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        idC.setForeground(new java.awt.Color(255, 255, 255));
         idC.setText("idC");
-        jPanel3.add(idC, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
+        jPanel3.add(idC, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 80, 20));
 
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("(Ultimo Combate)");
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("RESULTADOS");
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/bcblur.jpg"))); // NOI18N
+        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 330));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 350, 330));
 
@@ -356,12 +418,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println(admin.getPersonaje1().getNombre());
-        System.out.println(admin.getPersonaje2().getNombre());
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,7 +469,6 @@ public class Interfaz extends javax.swing.JFrame {
     public javax.swing.JLabel ganadasN;
     public javax.swing.JLabel idC;
     public javax.swing.JLabel idN;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -427,16 +482,20 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
